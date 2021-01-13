@@ -7,7 +7,7 @@ import App from './App.jsx';
 
 console.log('hi heidi!')
 
-render (
-  < App />,
+render(
+    < App />,
   document.getElementById('root'),
 );
