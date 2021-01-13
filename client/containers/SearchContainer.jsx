@@ -19,6 +19,7 @@ class SearchContainer extends Component {
     };
 
     this.updateUserCoordinates = this.updateUserCoordinates.bind(this);
+    this.grubButton = this.grubButton.bind(this);
     //this.handleFriendAddressInput = this.handleFriendAddressInput.bind(this);
   }
 
@@ -59,7 +60,13 @@ class SearchContainer extends Component {
       headers: {
         'Content-Type': 'Application/JSON'
       },
-      body: JSON.stringify({address: address}),
+      body: JSON.stringify({
+        friendAddress: address,
+        user: {
+          lat: this.state.user.lat,
+          long: this.state.user.long,
+        }
+      }),
     })
     .then((data) => data.json())
     .then((data) => console.log(data))
