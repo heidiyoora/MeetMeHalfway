@@ -9,7 +9,6 @@ module.exports = {
   },
   devServer: {
     publicPath: '/dist/',
-    //contentBase: './src', 'client'
     proxy: {
       '/': 'http://localhost:3000/',
     },

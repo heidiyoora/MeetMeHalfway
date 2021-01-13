@@ -5,7 +5,7 @@ import App from './App.jsx';
 // import styles from '/.scss/application.scss';
 
 
-console.log('hi heidi!')
+console.log('hi heidi! -> client/index.js')
 
 render(
     <App />,
