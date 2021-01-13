@@ -17,7 +17,8 @@ const AddressInput = (props) => {
         const friendState = document.getElementById('friendState').value;
 
         const fullAddress = friendAddress + ' ' + friendCity + ' ' + friendState;
-        console.log(fullAddress);
+        //console.log(fullAddress);
+        props.grubButton(fullAddress);
       }} > Let's get grubbing! </button>
     </div>
 

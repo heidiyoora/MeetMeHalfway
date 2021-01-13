@@ -1,9 +1,12 @@
 const express = require('express');
-const app = express();
 const path = require('path');
 const fs = require('fs');
 
+const app = express();
 const PORT = 3000;
+
+/*** routers ***/
+const locationRouter = require('./routes/locationRouter.js');
 
 app.use(express.json());
 
@@ -11,11 +14,17 @@ app.use((req, res, next) => {
   console.log(`
   *** FLOW METHOD ***\n
   URL: ${req.url}\n
+  BODY: ${req.body}\n
   METHOD: ${req.method}\n`);
   return next();
 })
 
 
+
+
+// route handlers
+
+app.use('/location', locationRouter);
 
 
 // main app page

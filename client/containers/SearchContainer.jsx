@@ -2,9 +2,6 @@ import React, { Component } from 'react';
 import AddressInput from '../components/AddressInput.jsx';
 
 
-const openCageAPIKey = '917441060cc446ec958162b37b44dc9c';
-// When reverse geocoding the query should be in latitude, longitude order in decimal format. Use periods as decimals, not commas.
-
 class SearchContainer extends Component {
   constructor(){
     super();
@@ -38,7 +35,7 @@ class SearchContainer extends Component {
     })
   }
 
-  handleFriendAddressInput(e){
+  /*handleFriendAddressInput(e){
     let val = e.target.value;
     if (typeof val === ' number'){
       val = val.toString();
@@ -49,13 +46,24 @@ class SearchContainer extends Component {
       newState.friend.address = newState.friend.address.concat(val);
       return newState; 
     })
-  }
+  }*/
   
-  grubButton(){
+  grubButton(address){
     // fetch request to server Api as POST
     // send body with friend address
       // send over friend address 
 
+
+    fetch('/location', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'Application/JSON'
+      },
+      body: JSON.stringify({address: address}),
+    })
+    .then((data) => data.json())
+    .then((data) => console.log(data))
+    .catch((err) => console.log(err));
     //receieve data back -> update state to have friend's long & lat
   }
 
