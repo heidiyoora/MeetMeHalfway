@@ -9,9 +9,11 @@ module.exports = {
   },
   devServer: {
     publicPath: '/dist/',
+    //contentBase: './src', 'client'
     proxy: {
-      '/': 'http://localhost:3000/'
-    }
+      '/': 'http://localhost:3000/',
+    },
+    hot: true,
   },
   module: {
     rules: [

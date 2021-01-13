@@ -8,6 +8,6 @@ import App from './App.jsx';
 console.log('hi heidi!')
 
 render(
-    < App />,
+    <App />,
   document.getElementById('root'),
 );
