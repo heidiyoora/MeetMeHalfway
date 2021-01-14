@@ -12,15 +12,34 @@ mongoose.connect(MONGO_URI, {
 
 const Schema = mongoose.Schema;
 
-// 3 collections: Saved Locations, Favorite Restaurants, Favorite Bars
+
+
+
+// helper schemas
 const locationSchema = new Schema({
-  latitude: Number,
-  longitude: Number,
+  latitude: { type: Number, required: true },
+  longitude: { type: Number, required: true },
+});
+//const Location = mongoose.model('location', locationSchema);
+
+const category = new Schema({
+  title: String,
 });
 
-const categories//
+const deconstructuredLocation = new Schema({
+  address1: { type: String, required: true },
+  address2: String,
+  address3: String,
+  city: String,
+  zip_code: String,
+  country: String,
+  state: String,
+  display_address: [String],
+})
 
-//const Location = mongoose.model('location', locationSchema);
+
+
+/* MODELS */
 
 const friendSchema = new Schema({
   address: String,
@@ -36,7 +55,21 @@ const favoriteSchema = new Schema({
   image_url: String,
   url: String,
   review_count: Number,
-  categories: [],
+  categories: [category],
+  rating: Number,
+  coordinates: {locationSchema},
+  transactions: [String],
+  price: String,
+  location: {deconstructuredLocation},
+  phone: String,
+  display_phone: String,
+  distance: Number,
+});
+
+const Favorite = mongoose.model('favorite', favoriteSchema);
 
 
-})
+module.exports = {
+  Friend,
+  Favorite
+};
