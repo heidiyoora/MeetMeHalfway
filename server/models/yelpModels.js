@@ -16,12 +16,6 @@ const Schema = mongoose.Schema;
 
 
 // helper schemas
-const locationSchema = new Schema({
-  latitude: { type: Number, required: true },
-  longitude: { type: Number, required: true },
-});
-//const Location = mongoose.model('location', locationSchema);
-
 const category = new Schema({
   title: String,
 });
@@ -43,8 +37,14 @@ const deconstructuredLocation = new Schema({
 
 const friendSchema = new Schema({
   address: String,
-  coordinates: {locationSchema},
-  midpoint: {locationSchema},
+  coordinates: {
+    latitude: Number,
+    longitude: Number,
+  },
+  midpoint: {
+    latitude: Number,
+    longitude: Number,
+  },
 });
 
 const Friend = mongoose.model('friend', friendSchema);
@@ -55,12 +55,26 @@ const favoriteSchema = new Schema({
   image_url: String,
   url: String,
   review_count: Number,
-  categories: [category],
+  categories: [{
+    title: String,
+  }],
   rating: Number,
-  coordinates: {locationSchema},
+  coordinates: {
+    latitude: Number,
+    longitude: Number,
+  }, 
   transactions: [String],
   price: String,
-  location: {deconstructuredLocation},
+  location: {
+    address1: { type: String, required: true },
+    address2: String,
+    address3: String,
+    city: String,
+    zip_code: String,
+    country: String,
+    state: String,
+    display_address: [String],
+  },
   phone: String,
   display_phone: String,
   distance: Number,

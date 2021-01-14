@@ -2,6 +2,7 @@ const express = require('express');
 const locationController = require('../controllers/locationController.js');
 const yelpController = require('../controllers/yelpController.js');
 const mongoController = require('../controllers/mongoController.js');
+const { mongo } = require('mongoose');
 const router = express.Router();
 
 
@@ -13,6 +14,7 @@ router.post('/',
   locationController.forwardGeocode,
   locationController.findMidpoint,
   yelpController.getList,
+  mongoController.saveFriendLoc,
   (req, res) => res.status(200).json({
     recommendations: res.locals.recommendations,
     friend: res.locals.friend,
