@@ -27,7 +27,7 @@
     "categories categories categories"
     "restAdd restAdd restAdd"
     "phone phone phone"
-    "rating reviews price"
+    "totalrating reviews price"
   }
 
   #categories {
@@ -45,9 +45,19 @@
     grid-area: phone;
   }
 
-  #rating {
-    grid-area: rating;
-    text-align: center;
+  #totalrating {
+    grid-area: totalrating;
+    //text-align: center;
+    display: inline-flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: baseline;
+
+    img {
+      height: 20px;
+      width: 20px;
+    }
+
   }
 
   #price {
@@ -58,6 +68,8 @@
   #reviews {
     grid-area: reviews;
     text-align: center;
+    color: grey;
+    font-size: 14px;
   }
 }
 

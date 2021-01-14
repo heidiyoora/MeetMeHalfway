@@ -9,6 +9,19 @@ const findDistance = (friend, restaurant) => {
  // find distance from restuarant to friend -> stretch!!
 };
 
+const fullStars = rating => {
+  const total = [];
+  let count = Math.floor(rating);
+    while (count > 0){
+      total.push(
+        <img src='../assets/fullstar.png'></img>
+      )
+      count--;
+    }
+  return total;
+}
+
+
 const RestaurantCard = ({ info, friend }) => {
   console.log('restaurant card: ', info)
 
@@ -28,8 +41,19 @@ const RestaurantCard = ({ info, friend }) => {
   //convert meters into miles -> this is the distance from restaurant to user
   const distFromUser = metersToMiles(distance);
 
+  // render the correct full rating stars
+  const displayStars = fullStars(rating);
+  // if half star rating:
+  if (rating%1 !== 0){
+    displayStars.push(
+      <img src='../assets/halfstar.png'></img>
+    )
+  }
 
-  
+  //pricing
+  const dollars = '💰'.repeat(price.length);
+
+
   return ( 
     <div className='restCardContainer'>
       <div>
@@ -47,9 +71,15 @@ const RestaurantCard = ({ info, friend }) => {
             <span id='categories' >{displayCategories}</span>
             <span id='restAdd' >{restAddress}</span>
             <span id='phone' >{display_phone}</span>
-            <span id='rating' >{rating}</span>
-            <span id='reviews' >{review_count}</span>
-            <span id='price' >{price}</span>
+            <div id='totalrating'>
+              <div class="stars" >
+                {displayStars}
+              </div>
+              
+            </div>
+              <span id='reviews' >reviews: {review_count}</span>
+            
+            <span id='price' >{dollars}</span>
           </article>
       </div>
     </div>
@@ -57,3 +87,5 @@ const RestaurantCard = ({ info, friend }) => {
 };
 
 export default RestaurantCard;
+
+//<span id='rating' >{rating}</span>
