@@ -14,7 +14,9 @@
 body {
   font-family: arial, Helvetica, sans-serif;
   //text-align: center;
-  background-image: url('../assets/nacho.jpg');
+  background-image: url('../assets/sushi.jpg');
+  //background-repeat: no-repeat;
+  background-size: cover;
   //background-size: 100%; 
   padding: 30px;
 }
