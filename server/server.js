@@ -42,8 +42,16 @@ app.use('*', (req, res, next) => {
 
 // global error handler
 app.use((err, req, res, next) => {
-  console.log(err);
-  return res.status(404).send('Internal Server Error')
+
+  const defaultErr = {
+    log: 'Express error handler caught unknown middleware error',
+    status: 400,
+    message: { err: 'Interval Server Error' }, 
+  };
+
+  const errorObj = Object.assign(defaultErr, err);
+  console.log('Error message from global err handler: ', errorObj.log);
+  return res.status(errorObj.status).send(errorObj.message);
 });
 
 app.listen(PORT, () => {

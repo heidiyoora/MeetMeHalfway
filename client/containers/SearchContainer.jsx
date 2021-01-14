@@ -53,8 +53,6 @@ class SearchContainer extends Component {
     // fetch request to server Api as POST
     // send body with friend address
       // send over friend address 
-
-
     fetch('/location', {
       method: 'POST',
       headers: {

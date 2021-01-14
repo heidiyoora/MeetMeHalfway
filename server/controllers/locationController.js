@@ -14,8 +14,7 @@ locationController.forwardGeocode = (req, res, next) => {
   // verify requested address is a string
   if (typeof req.body.friendAddress !== 'string'){
     return next({
-      log: 'ERROR: locationController.forwardGeocode - requested address is not a string',
-      message: { err: 'Internal Server Error'}
+      log: 'ERROR: locationController.forwardGeocode - requested address is not a string'
     });
   }
   // sanitize string to have no white spaces
@@ -45,8 +44,14 @@ locationController.findMidpoint = (req, res, next) => {
   const user = req.body.user;
   const friend = res.locals.friend;
 
-  res.locals.midpoint = findMidPt(user, friend);
-  return next();
+  try{
+    res.locals.midpoint = findMidPt(user, friend);
+    return next();
+  }
+
+  catch (err){
+    return next({log: `ERROR in locationController.findMidpoint - ${err}`})
+  }
 };
 
 
