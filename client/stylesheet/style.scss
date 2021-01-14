@@ -37,8 +37,22 @@ h1 {
 .searchContainer {
   border: 1px solid black;
   margin: 35px;
-
+  padding: 20px;
   //width: 75%;
+  
+}
+
+input {
+  margin: 1px;
+  border-radius: 5px;
+  border: 1px solid lightgrey;
+  height: 18px;
+  width: 150px;
+}
+
+// grub
+#grubButton {
+  margin: 10px;
 }
 
 .resultsContainer {

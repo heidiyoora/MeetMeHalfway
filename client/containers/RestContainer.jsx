@@ -6,7 +6,7 @@ const RestContainer = ({ recommendations, friend }) => {
   let recs;
 
   if (!recommendations.length) {
-    recs = null;
+    recs = null
   } else {
     recs = recommendations.map((rec, i) => {
       return (
@@ -25,8 +25,6 @@ const RestContainer = ({ recommendations, friend }) => {
     </div>
   )
 }
-
-
 
 
 

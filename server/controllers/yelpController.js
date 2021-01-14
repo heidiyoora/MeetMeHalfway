@@ -16,10 +16,11 @@ yelpController.getList = (req, res, next) => {
   client.search({
     latitude: midpoint.latitude,
     longitude: midpoint.longitude,
-    open_now: true,
-    sort_by: 'rating',
+    categories: 'food,all',
+    //open_now: true,
+    //sort_by: 'distance',
     limit: 10, // limits the # of options
-    //radius: 3,
+    //radius: 2,
     //term: 
   })
     .then((response) => {

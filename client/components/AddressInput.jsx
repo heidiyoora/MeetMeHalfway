@@ -9,10 +9,11 @@ const AddressInput = (props) => {
       <input type='text' id='friendCity' placeholder='City' />
       <br></br>
       <input type='text' id='friendState' placeholder='State' />
+      <br></br>
       <input type='text' id='friendZipcode' placeholder='Zipcode' />
       <br></br>
 
-      <button className='findFood' type='button' onClick={() => {
+      <button id='grubButton' type='button' onClick={() => {
         const friendAddress = document.getElementById('friendAddress').value;
         const friendCity = document.getElementById('friendCity').value;
         const friendState = document.getElementById('friendState').value;

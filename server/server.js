@@ -28,6 +28,7 @@ app.use('/location', locationRouter);
 
 
 // main app page
+app.use('/assets', express.static(path.join(__dirname, '../client/assets')));
 app.use('/dist', express.static(path.join(__dirname, '../dist')));
 
 app.get('/', (req, res) => {

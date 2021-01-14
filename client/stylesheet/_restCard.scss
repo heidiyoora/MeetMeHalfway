@@ -1,17 +1,18 @@
 .restCardContainer {
   border: 1px solid black;
+  border-radius: 3%;
   display: flex;
   flex-wrap: nowrap;
   width: 650px;
   height: 210;
   padding: 24px;
   margin: 24px;
+  background-color: rgb(240, 239, 230);
 }
 
 .restCard {
 
 }
-
 
 // rest img tags!
 .restPic {
@@ -19,4 +20,36 @@
   width: 200px;
   height: 200px;
   border-radius: 5%;
+}
+
+#cardHeader {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  margin: 3px;
+  padding: 10px;
+  width: 400px;
+  height: 35px;
+
+  h2 {
+    margin: 3px;
+    padding: 10px;
+    width: 60%;
+    font-size: 22px; }
+
+  img {
+    height: 40px;
+    width: 40px;
+  }
+
+  #innerflex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+#otherflex {
+  display: flex;
 }

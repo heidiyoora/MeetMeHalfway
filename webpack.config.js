@@ -12,6 +12,7 @@ module.exports = {
     proxy: {
       '/': 'http://localhost:3000/',
       '/location/**': 'http://localhost:3000/', 
+      '/assets/**': 'http://localhost:3000/'
     },
     hot: true,
   },
