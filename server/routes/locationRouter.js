@@ -4,6 +4,11 @@ const yelpController = require('../controllers/yelpController.js');
 const mongoController = require('../controllers/mongoController.js');
 const router = express.Router();
 
+
+// has:
+  // req.body.friendAddress = address string
+  // res.locals.friend = obj of coordinates {lat: number, long: number}
+  // res.locals.midpoint = obj of coordinate {latitude: number, longitude: number}
 router.post('/',
   locationController.forwardGeocode,
   locationController.findMidpoint,

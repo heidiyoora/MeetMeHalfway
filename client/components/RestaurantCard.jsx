@@ -72,7 +72,7 @@ const RestaurantCard = ({ info, friend }) => {
             <span id='restAdd' >{restAddress}</span>
             <span id='phone' >{display_phone}</span>
             <div id='totalrating'>
-              <div class="stars" >
+              <div className="stars" >
                 {displayStars}
               </div>
               

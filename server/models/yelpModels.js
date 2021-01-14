@@ -13,8 +13,30 @@ mongoose.connect(MONGO_URI, {
 const Schema = mongoose.Schema;
 
 // 3 collections: Saved Locations, Favorite Restaurants, Favorite Bars
+const locationSchema = new Schema({
+  latitude: Number,
+  longitude: Number,
+});
+
+const categories//
+
+//const Location = mongoose.model('location', locationSchema);
+
 const friendSchema = new Schema({
   address: String,
-  city: String,
-  State: String,
+  coordinates: {locationSchema},
+  midpoint: {locationSchema},
+});
+
+const Friend = mongoose.model('friend', friendSchema);
+
+const favoriteSchema = new Schema({
+  id: { type: String, required: true },
+  name: { type: String, required: true },
+  image_url: String,
+  url: String,
+  review_count: Number,
+  categories: [],
+
+
 })

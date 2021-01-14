@@ -17,7 +17,7 @@ yelpController.getList = (req, res, next) => {
     latitude: midpoint.latitude,
     longitude: midpoint.longitude,
     categories: 'food,all',
-    //open_now: true,
+    open_now: true,
     //sort_by: 'distance',
     limit: 10, // limits the # of options
     //radius: 2,
