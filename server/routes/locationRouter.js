@@ -9,7 +9,8 @@ router.post('/',
   locationController.findMidpoint,
   yelpController.getList,
   (req, res) => res.status(200).json({
-    message: 'hi'
+    recommendations: res.locals.recommendations,
+    friend: res.locals.friend,
   })
 );
 

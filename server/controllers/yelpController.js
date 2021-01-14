@@ -26,12 +26,15 @@ yelpController.getList = (req, res, next) => {
       const results = response.jsonBody.businesses // an array of objs
       console.log('length of query: ', results.length)
 
+
+      results.map(rec => {
+        delete rec.alias;
+        delete rec.is_closed;
+      })
       res.locals.recommendations = results;
+      return next()
     })
-    .catch(err => next({log: `Error from Yelp Fusion: ${err}`}))
-
-
-  return next()
+    .catch(err => next({log: `Error from Yelp Fusion: ${err}`})) 
 }
 
 module.exports = yelpController;

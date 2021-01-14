@@ -2,6 +2,22 @@ import React, { Component } from 'react';
 import AddressInput from '../components/AddressInput.jsx';
 
 
+const SearchContainer = (props) => {
+
+    //console.log('search container: ', props)
+    return (
+      <div className='searchContainer'>
+        <p>Enter your friend's address</p>
+        <AddressInput grubButton={props.grubButton} />
+      </div>
+    )
+}
+
+
+
+export default SearchContainer;
+
+/*
 class SearchContainer extends Component {
   constructor(){
     super();
@@ -36,7 +52,7 @@ class SearchContainer extends Component {
     })
   }
 
-  /*handleFriendAddressInput(e){
+  handleFriendAddressInput(e){
     let val = e.target.value;
     if (typeof val === ' number'){
       val = val.toString();
@@ -47,7 +63,7 @@ class SearchContainer extends Component {
       newState.friend.address = newState.friend.address.concat(val);
       return newState; 
     })
-  }*/
+  }
   
   grubButton(address){
     // fetch request to server Api as POST
@@ -99,7 +115,4 @@ class SearchContainer extends Component {
     )
   }
 }
-
-
-
-export default SearchContainer;
+*/

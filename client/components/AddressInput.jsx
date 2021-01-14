@@ -1,7 +1,7 @@
 import React from 'react';
 
 const AddressInput = (props) => {
-  //console.log(props);
+  //console.log('address input: ', grubButton);
   return (
     <div id='addressInput'>
       <input type='text' id='friendAddress' placeholder='Address' />
