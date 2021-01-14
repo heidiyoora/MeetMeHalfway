@@ -24,7 +24,7 @@ const AddressInput = (props) => {
         let fullAddress = friendAddress + ' ' + friendCity + ' ' + friendState + ' ' + friendZipcode;
 
         props.grubButton(fullAddress);
-      }} > Let's get grubbing! </button>
+      }} > Let's get grubbing! 🍔 </button>
     </div>
 
   )

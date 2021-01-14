@@ -5,7 +5,7 @@ import ResultsContainer from './ResultsContainer.jsx';
 const RestContainer = ({ recommendations, friend }) => {
   let recs;
 
-  if (!recommendations.length) {
+  if (!recommendations) {
     recs = null
   } else {
     recs = recommendations.map((rec, i) => {

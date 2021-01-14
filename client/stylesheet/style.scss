@@ -1,12 +1,5 @@
-@font-face {
-  font-family: 'Fascinate Inline';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url(https://fonts.gstatic.com/s/fascinateinline/v10/jVyR7mzzB3zc-jp6QCAu60poNqIy5grIfDfySZU.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
 
+@import 'fonts';
 @import 'restCard';
 @import 'restContainer';
 
@@ -14,9 +7,9 @@
 body {
   font-family: arial, Helvetica, sans-serif;
   //text-align: center;
-  background-image: url('../assets/sushi.jpg');
+  background-image: url('../assets/hamburg.jpg');
   //background-repeat: no-repeat;
-  background-size: cover;
+  background-size: 100%;
   //background-size: 100%; 
   padding: 30px;
 }
@@ -26,8 +19,12 @@ h1 {
   font-size: 62px;
 }
 
+#mmhHeader {
+  text-align: center;
+}
+
 .mainContainer {
-  border: 1px solid red;
+  //border: 1px solid red;
   //display: flex;
   //flex-wrap: nowrap;
   //width: 85%;
@@ -38,8 +35,8 @@ h1 {
   border: 1px solid black;
   margin: 35px;
   padding: 20px;
-  //width: 75%;
-  
+  font-family: 'Fredoka One';
+  font-size: 22px;
 }
 
 input {
@@ -47,16 +44,33 @@ input {
   border-radius: 5px;
   border: 1px solid lightgrey;
   height: 18px;
-  width: 150px;
+  width: 400px;
 }
 
 // grub
 #grubButton {
   margin: 10px;
+  font-size: 16px;
+  border: 1px solid grey;
+  transition: ease 1s;
+  font-family: 'Potta One', cursive;
+  border-radius: 25px; 
+  width: 300px;
+  background-color: white;
+}
+
+#grubButton:hover{
+  //background-color: rgb(255, 217, 184, 0.5);
+  color: black;
+  box-shadow: 0 1px 1px 0 rgba(0,0,0,0.24), 0 1px 1px 0 rgba(0,0,0,0.19);
+}
+
+#grubButton:focus{
+  outline: none;
 }
 
 .resultsContainer {
-  border: 1px solid green;
+  //border: 1px solid green;
   width: 1000px;
 }
 

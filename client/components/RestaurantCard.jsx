@@ -7,7 +7,7 @@ const metersToMiles = meters => {
 
 const findDistance = (friend, restaurant) => {
  // find distance from restuarant to friend -> stretch!!
-}
+};
 
 const RestaurantCard = ({ info, friend }) => {
   console.log('restaurant card: ', info)
@@ -37,21 +37,20 @@ const RestaurantCard = ({ info, friend }) => {
       </div>
       <div className='restCard'>
           <div id='cardHeader'>
-              <h2> {name}</h2>
+              <a href={url} target='_blank'> {name}</a>
               <div id='innerflex'>
                 <img src='../assets/thickpin.png'></img>
                 <span>{distFromUser} miles</span>
               </div>
           </div>
-
-          <span>{displayCategories}</span>
-          <span>{restAddress}</span>
-          <span>{display_phone}</span>
-          <div id='otherflex'>
-              <span>{rating}</span>
-              <span>{price}</span>
-              <span>{review_count}</span>
-          </div>
+          <article>
+            <span id='categories' >{displayCategories}</span>
+            <span id='restAdd' >{restAddress}</span>
+            <span id='phone' >{display_phone}</span>
+            <span id='rating' >{rating}</span>
+            <span id='reviews' >{review_count}</span>
+            <span id='price' >{price}</span>
+          </article>
       </div>
     </div>
   )

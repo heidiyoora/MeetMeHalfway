@@ -16,7 +16,7 @@ class MainContainer extends Component {
         lat: 0,
         long: 0,
       },
-      recommendations: [],
+      //recommendations: [],
     };
 
     this.updateUserCoordinates = this.updateUserCoordinates.bind(this);
@@ -86,7 +86,9 @@ class MainContainer extends Component {
     
       return (
       <div className="mainContainer">
-        <h1> MEET ME HALFWAY</h1>
+        <div id='mmhHeader'>
+          <h1> MEET ME HALFWAY</h1>
+        </div>
         <SearchContainer grubButton={this.grubButton}> </SearchContainer>
         <ResultsContainer 
           recommendations={this.state.recommendations}
