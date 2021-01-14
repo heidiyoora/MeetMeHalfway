@@ -21,9 +21,18 @@ const fullStars = rating => {
   return total;
 }
 
+const iAmAFav = boolean => {
+  if (boolean === 'false') {
+    return <img id='favIcon' src='../assets/emptyheart.png'></img>
+  } else {
+    return <img id='favIcon' src='../assets/fullheart.png'></img>
+  }
+}
 
-const RestaurantCard = ({ info, friend }) => {
+
+const RestaurantCard = ({ info, friend, isFav }) => {
   console.log('restaurant card: ', info)
+  console.log('I AM A FAV: ', isFav)
 
   const { 
     display_phone, image_url, name, price, rating, review_count, transactions, url, categories, location, distance
@@ -53,6 +62,14 @@ const RestaurantCard = ({ info, friend }) => {
   //pricing
   const dollars = '💰'.repeat(price.length);
 
+  // favIcon
+  let FavIcon;
+  if (isFav) {
+    FavIcon = <img src='../assets/fullheart.png'></img>
+  } else {
+    FavIcon = <img src='../assets/emptyheart.png'></img>
+  }
+
 
   return ( 
     <div className='restCardContainer'>
@@ -75,11 +92,12 @@ const RestaurantCard = ({ info, friend }) => {
               <div className="stars" >
                 {displayStars}
               </div>
-              
+              <span id='reviews' >   {review_count}</span>
             </div>
-              <span id='reviews' >reviews: {review_count}</span>
-            
             <span id='price' >{dollars}</span>
+            <div id='favIcon'>
+              {FavIcon}
+            </div>
           </article>
       </div>
     </div>
@@ -89,3 +107,4 @@ const RestaurantCard = ({ info, friend }) => {
 export default RestaurantCard;
 
 //<span id='rating' >{rating}</span>
+//

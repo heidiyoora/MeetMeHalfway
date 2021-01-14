@@ -3,7 +3,26 @@ import RestContainer from '../containers/RestContainer.jsx'
 import MapContainer from '../containers/MapContainer.jsx'
 //import RestaurantCard from '../components/RestaurantCard.jsx'
 
-const ResultsContainer = ({ recommendations, friend }) => {
+const ResultsContainer = ({ recommendations, friend, favs }) => {
+
+  return(
+    <div className = 'resultsContainer'>
+        <RestContainer 
+        recommendations={recommendations}
+        friend={friend}
+        favs={favs}
+        />
+        <MapContainer />
+    </div>
+  )
+}
+
+export default ResultsContainer;
+
+
+
+
+
   /*let recs;
 
   if (!recommendations.length) {
@@ -19,16 +38,3 @@ const ResultsContainer = ({ recommendations, friend }) => {
       );
     })
   }*/
-
-  return(
-    <div className = 'resultsContainer'>
-        <RestContainer 
-        recommendations={recommendations}
-        friend={friend}
-        />
-        <MapContainer />
-    </div>
-  )
-}
-
-export default ResultsContainer;

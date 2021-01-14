@@ -13,26 +13,6 @@ mongoose.connect(MONGO_URI, {
 const Schema = mongoose.Schema;
 
 
-
-
-// helper schemas
-const category = new Schema({
-  title: String,
-});
-
-const deconstructuredLocation = new Schema({
-  address1: { type: String, required: true },
-  address2: String,
-  address3: String,
-  city: String,
-  zip_code: String,
-  country: String,
-  state: String,
-  display_address: [String],
-})
-
-
-
 /* MODELS */
 
 const friendSchema = new Schema({
@@ -87,3 +67,27 @@ module.exports = {
   Friend,
   Favorite
 };
+
+
+
+/*
+
+// helper schemas
+const category = new Schema({
+  title: String,
+});
+
+const deconstructuredLocation = new Schema({
+  address1: { type: String, required: true },
+  address2: String,
+  address3: String,
+  city: String,
+  zip_code: String,
+  country: String,
+  state: String,
+  display_address: [String],
+})
+
+
+
+*/

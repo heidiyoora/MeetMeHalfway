@@ -7,6 +7,7 @@ const PORT = 3000;
 
 /*** routers ***/
 const locationRouter = require('./routes/locationRouter.js');
+const favoriteRouter = require('./routes/favoriteRouter.js');
 
 app.use(express.json());
 
@@ -25,6 +26,7 @@ app.use((req, res, next) => {
 // route handlers
 
 app.use('/location', locationRouter);
+app.use('/favorite', favoriteRouter);
 
 
 // main app page

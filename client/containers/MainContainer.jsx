@@ -16,6 +16,7 @@ class MainContainer extends Component {
         lat: 0,
         long: 0,
       },
+      //favs: [],
       //recommendations: [],
     };
 
@@ -60,6 +61,7 @@ class MainContainer extends Component {
         const newState = {...prevState};
         newState.recommendations = data.recommendations;
         newState.friend = data.friend;
+        newState.favs = data.favs;
         return newState;
       })
 
@@ -93,6 +95,7 @@ class MainContainer extends Component {
         <ResultsContainer 
           recommendations={this.state.recommendations}
           friend={this.state.friend} 
+          favs={this.state.favs}
           ></ResultsContainer>
       </div>
     )

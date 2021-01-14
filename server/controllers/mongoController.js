@@ -52,11 +52,26 @@ mongoController.getFriendLoc = (req, res, next) => {
 };
 */
 
-/* to display favs
+//to display favs
 mongoController.getFav = (req, res, next) => {
+  models.Favorite.find().then((data) => {
+    console.log('mongoController.getFav: data ', data);
+    try {
+      if (!data.length) {
+        res.locals.favs = [];
+      } else {
+        res.locals.favs = data;
+      };
 
+      return next();
+    } 
+
+    catch  (err) {
+      if (err) return next({log: `ERROR: mongoController.getFav - unable to fetch favorites from MongoDB: ${err}`})
+    }
+  })
 };
-*/
+
 
 mongoController.addFav = (req, res, next) => {
 
