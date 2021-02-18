@@ -9,7 +9,7 @@ const ResultsContainer = ({ recommendations, friend, favs }) => {
     <div className = 'resultsContainer'>
         <RestContainer 
         recommendations={recommendations}
-        friend={friend}
+        //friend={friend}
         favs={favs}
         />
         <MapContainer />

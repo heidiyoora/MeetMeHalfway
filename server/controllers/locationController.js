@@ -19,7 +19,6 @@ locationController.forwardGeocode = (req, res, next) => {
   }
   // sanitize string to have no white spaces
   const address = req.body.friendAddress.replace(/\s/g, '%20');
-  //console.log('locationCont.forwardGeocode: ', address);
 
   // fetch OpenCage API request to retrieve coords of friend location
   fetch(`https://api.opencagedata.com/geocode/v1/json?q=${address}&key=${openCageAPIKey}&bounds=-76.12021,39.55986,-71.68899,41.81065&countrycode=us&limit=1`)
@@ -39,8 +38,6 @@ locationController.forwardGeocode = (req, res, next) => {
 };
 
 locationController.findMidpoint = (req, res, next) => {
-  console.log('user: ', req.body.user);
-  console.log('friend: ', res.locals.friend);
 
   const user = req.body.user;
   const friend = res.locals.friend;

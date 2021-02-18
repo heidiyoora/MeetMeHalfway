@@ -31,12 +31,11 @@ const iAmAFav = boolean => {
 
 
 const RestaurantCard = ({ info, friend, isFav }) => {
-  console.log('restaurant card: ', info)
-  console.log('I AM A FAV: ', isFav)
 
   const { 
     display_phone, image_url, name, price, rating, review_count, transactions, url, categories, location, distance
   } = info;
+
 
   // concatenating the restaurant address to display
   let restAddress = location.display_address.join(', ');
@@ -60,7 +59,7 @@ const RestaurantCard = ({ info, friend, isFav }) => {
   }
 
   //pricing
-  const dollars = '💰'.repeat(price.length);
+  const dollars = price ? '💰'.repeat(price.length) : null;
 
   // favIcon
   let FavIcon;

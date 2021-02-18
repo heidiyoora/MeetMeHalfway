@@ -16,7 +16,7 @@ class MainContainer extends Component {
         lat: 0,
         long: 0,
       },
-      //favs: [],
+      favs: [],
       //recommendations: [],
     };
 
@@ -60,8 +60,8 @@ class MainContainer extends Component {
        this.setState((prevState) => {
         const newState = {...prevState};
         newState.recommendations = data.recommendations;
-        newState.friend = data.friend;
-        newState.favs = data.favs;
+        //newState.friend = data.friend;
+        //newState.favs = data.favs;
         return newState;
       })
 
@@ -94,7 +94,7 @@ class MainContainer extends Component {
         <SearchContainer grubButton={this.grubButton}> </SearchContainer>
         <ResultsContainer 
           recommendations={this.state.recommendations}
-          friend={this.state.friend} 
+          //friend={this.state.friend} 
           favs={this.state.favs}
           ></ResultsContainer>
       </div>

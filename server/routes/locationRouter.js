@@ -14,12 +14,12 @@ router.post('/',
   locationController.forwardGeocode,
   locationController.findMidpoint,
   yelpController.getList,
-  mongoController.getFav,
-  mongoController.saveFriendLoc,
+  //mongoController.getFav,
+  //mongoController.saveFriendLoc,
   (req, res) => res.status(200).json({
     recommendations: res.locals.recommendations,
-    friend: res.locals.friend,
-    favs: res.locals.favs,
+    //friend: res.locals.friend,
+    //favs: res.locals.favs,
   })
 );
 
